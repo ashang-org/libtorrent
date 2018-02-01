@@ -246,7 +246,6 @@ namespace {
 	}
 
 	bdecode_node::bdecode_node(bdecode_node&&) noexcept = default;
-	bdecode_node& bdecode_node::operator=(bdecode_node&&) noexcept = default;
 
 	bdecode_node::bdecode_node(bdecode_token const* tokens, char const* buf
 		, int len, int idx)

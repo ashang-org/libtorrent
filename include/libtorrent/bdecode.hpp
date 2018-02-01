@@ -265,7 +265,7 @@ struct TORRENT_EXPORT bdecode_node
 	bdecode_node(bdecode_node const&);
 	bdecode_node& operator=(bdecode_node const&);
 	bdecode_node(bdecode_node&&) noexcept;
-	bdecode_node& operator=(bdecode_node&&) noexcept;
+	bdecode_node& operator=(bdecode_node&&) = default;
 
 	// the types of bdecoded nodes
 	enum type_t

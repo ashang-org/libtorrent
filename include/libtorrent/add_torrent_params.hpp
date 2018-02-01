@@ -89,8 +89,7 @@ namespace libtorrent {
 		// data for the torrent. For more information, see the ``storage`` field.
 		explicit add_torrent_params(storage_constructor_type sc = default_storage_constructor);
 		add_torrent_params(add_torrent_params&&) noexcept;
-		// TODO: GCC did not make std::string nothrow move-assignable
-		add_torrent_params& operator=(add_torrent_params&&);
+		add_torrent_params& operator=(add_torrent_params&&) = default;
 		add_torrent_params(add_torrent_params const&);
 		add_torrent_params& operator=(add_torrent_params const&);
 
@@ -145,7 +144,7 @@ namespace libtorrent {
 		// tracker extension. This is optional, if not specified trackers are
 		// assumed to be part of tier 0, or whichever the last tier was as
 		// iterating over the trackers.
-		aux::noexcept_movable<std::vector<int>> tracker_tiers;
+		std::vector<int> tracker_tiers;
 
 		// a list of hostname and port pairs, representing DHT nodes to be added
 		// to the session (if DHT is enabled). The hostname may be an IP address.
