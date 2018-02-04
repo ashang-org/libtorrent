@@ -144,7 +144,7 @@ namespace libtorrent {
 		// tracker extension. This is optional, if not specified trackers are
 		// assumed to be part of tier 0, or whichever the last tier was as
 		// iterating over the trackers.
-		std::vector<int> tracker_tiers;
+		aux::noexcept_movable<std::vector<int>> tracker_tiers;
 
 		// a list of hostname and port pairs, representing DHT nodes to be added
 		// to the session (if DHT is enabled). The hostname may be an IP address.
